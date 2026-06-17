@@ -4,8 +4,6 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>SuperCaisse</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#F3F6F2;
@@ -18,9 +16,9 @@
   --accent-soft:#FBEAE0;
   --border:#DCE6DD;
   --radius:10px;
-  --font-display:'Sora', sans-serif;
-  --font-body:'Inter', sans-serif;
-  --font-mono:'IBM Plex Mono', monospace;
+  --font-display:system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-body:-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  --font-mono:'SF Mono', 'Fira Code', 'Cascadia Code', 'Consolas', monospace;
 }
 *{box-sizing:border-box;}
 html,body{margin:0;padding:0;}
