@@ -57,7 +57,7 @@ class Database extends Config
         * @var array<string, mixed>
         */
        public array $default = [
-           'database'    => 'supermarket.db',
+           'database'    =>'supermarket.db',
            'DBDriver'    => 'SQLite3',
            'DBPrefix'    => '',
            'DBDebug'     => true,
