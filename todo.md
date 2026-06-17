@@ -1,21 +1,54 @@
-1.Créer l’écran d’accueil qui permet de choisir le numéro de Caisse (20mn)
-design:
-Choisir Caisse
-dropdown pour choisir la caisse
-bouton valider
+# Todo — Supermarket
 
-a.Après validation, on arrive sur la page de saisie des achats et on affiche la caisse choisie sur la partie au-dessus du menu.(25mn) – il faut utiliser la session
- 
-suivre la design template dans views/template/template.html
+## Fait
 
-1.Créer la page de saisie des achats
-dropdown produit
-saisi de la quantite
-bouton valider
+### 1. Écran d'accueil (choix de la caisse)
+- Page d'accueil avec dropdown listant les caisses depuis la DB
+- Bouton Valider → stocke le choix en session → redirige vers saisie des achats
+- Page dédiée `/choisir-caisse` accessible via le menu
 
-tableau pour voir les achat
-produit|prix unit|quantite|montant
-total
+### 2. Saisie des achats
+- Formulaire : dropdown produit (depuis DB) + quantité + bouton Valider
+- Tableau récapitulatif : Produit, Prix unit., Qté, Montant
+- Total calculé dynamiquement
+- Page accessible sans caisse (message + bouton pour en choisir une)
 
-a.Etape 1 : faire la partie en haut en 1er
-b.Etape 2 : afficher la partie en bas
+### 3. Base de données
+- Tables : `utilisateur`, `caisse`, `produit`, `vente`, `achat`
+- Données de test : 2 caisses, 5 produits, 1 utilisateur (admin/password)
+- `clean.sql` pour réinitialiser les tables
+
+### 4. Authentification
+- Écran de login avant toute page
+- Utilisateur par défaut : `admin` / `password`
+- Œil pour afficher/masquer le mot de passe
+- Déconnexion fonctionnelle
+
+### 5. Stock
+- `quantite_stock` décrémentée à chaque achat
+- Vérification du stock avant validation
+- Message d'erreur si stock insuffisant
+
+### 6. Clôture d'achat
+- Bouton "Clôturer achat" quand des achats sont en cours
+- Crée une vente (regroupement par client)
+- Lie les achats à la vente
+- Liste vidée pour le prochain client
+
+### 7. Historique
+- Page listant toutes les ventes clôturées par caisse
+- Détail des produits et total par vente
+
+### 8. Navigation
+- Sidebar avec tous les liens fonctionnels (Accueil, Choisir caisse, Saisie, Produits, Historique)
+- Lien Déconnexion
+- Lien actif surligné
+
+### 9. Divers
+- Template header/footer extrait de `template.html`
+- Session activée dans BaseController
+- Routes CI4 configurées
+- Affichage en Ariary (Ar)
+
+## À faire
+- 
